@@ -1,14 +1,14 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
 from datetime import date
 from typing import Optional
 
 class ContactBase(BaseModel):
     first_name: str
     last_name: str
-    email: str
-    phone_number: str
-    birthdate: date
-    additional_data: Optional[str] = None
+    email: EmailStr
+    phone: str
+    birthday: date
+    additional_info: Optional[str] = None
 
 class ContactCreate(ContactBase):
     pass
